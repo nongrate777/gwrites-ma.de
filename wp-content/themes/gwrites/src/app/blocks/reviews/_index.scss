@@ -1,0 +1,112 @@
+.reviews {
+    position: relative;
+    padding: 24px 15px;
+    overflow: hidden;
+    margin: 0 -15px;
+
+    &__item {
+        background: var(--white);
+        padding: 96px 32px 42px;
+        border: 1px solid var(--light-gray);
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 13px 19px var(--shadow);
+        height: auto !important;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background: url("/src/images/reviews/img01.svg") no-repeat top right;
+            width: 40px;
+            height: 40px;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &-text {
+            color: var(--dark-gray);
+            line-height: 24px;
+        }
+
+        &-btn {
+            span {
+                font-size: 14px;
+                color: var(--blue);
+                border-bottom: 1px solid var(--blue);
+                cursor: pointer;
+            }
+        }
+
+        &-subtitle {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            color: var(--dark-blue);
+        }
+    }
+
+    &__arrows {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -24px;
+    }
+
+    &__arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: var(--light-gray);
+        background-image: url("/src/images/icons/arrow-white.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: 9;
+        transition: .3s;
+
+        &.swiper-button-disabled {
+            cursor: default;
+            opacity: .5;
+
+            &:hover {
+                background-color: var(--light-gray);
+            }
+        }
+
+        &:last-child {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            background-color: var(--blue);
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+
+        .swiper-pagination-bullet {
+            transition: .3s;
+            width: 16px;
+            height: 16px;
+            background: var(--light-gray);
+            border-radius: 16px;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--blue);
+            width: 32px;
+        }
+    }
+}

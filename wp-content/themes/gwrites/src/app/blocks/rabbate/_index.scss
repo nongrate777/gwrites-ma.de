@@ -1,0 +1,142 @@
+.subjects {
+    &-dissertation {
+        margin-top: 40px;
+
+        &__items {
+            position: relative;
+            padding: 0 15px;
+            margin: 0 -15px;
+
+            &-item {
+                border-radius: 8px;
+                border: 1px solid var(--light-gray);
+                background: var(--ligth-white);
+                height: auto !important;
+
+                &-title {
+                    padding: 16px 16px 16px 60px;
+                    border-bottom: 1px solid var(--light-gray);
+                    background: var(--light-blue);
+                    border-radius: 8px 8px 0 0;
+                    position: relative;
+                    color: var(--dark-blue);
+                    font: 700 14px/24px 'Ubuntu', sans-serif;
+                }
+
+                &-text {
+                    padding: 8px 16px;
+                    border-radius: 0 0 8px 8px;
+
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+
+                        li {
+                            font-size: 14px;
+                            color: var(--dark-gray);
+                            padding: 2px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0 100px;
+            margin-top: 40px;
+
+            &-title {
+                font: 700 20px/24px 'Ubuntu', sans-serif;
+                color: var(--blue);
+                margin-bottom: 8px;
+            }
+
+            &-text {
+                color: var(--dark-blue);
+                margin-bottom: 8px;
+            }
+
+            &-btn {
+                display: flex;
+                justify-content: center;
+                align-self: center;
+            }
+        }
+    }
+
+    &__arrows {
+        margin: 24px 0 0;
+        display: flex;
+        gap: 24px;
+    }
+
+    &__arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: var(--light-gray);
+        background-image: url("/src/images/icons/arrow-white.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: .3s;
+
+        &.swiper-button-disabled {
+            cursor: default;
+            opacity: .5;
+
+            &:hover {
+                background-color: var(--light-gray);
+            }
+        }
+
+        &:last-child {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            background-color: var(--blue);
+        }
+    }
+}
+
+#sd-1, #sd-2, #sd-3, #sd-4 {
+    &:before {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        border-radius: 8px;
+        background-color: var(--blue);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+#sd-1 {
+    &:before {
+        background-image: url("/src/images/subjects-dissertation/img01.svg");
+    }
+}
+#sd-2 {
+    &:before {
+        background-image: url("/src/images/subjects-dissertation/img02.svg");
+    }
+}
+#sd-3 {
+    &:before {
+        background-image: url("/src/images/subjects-dissertation/img03.svg");
+    }
+}
+#sd-4 {
+    &:before {
+        background-image: url("/src/images/subjects-dissertation/img04.svg");
+    }
+}

@@ -1,0 +1,606 @@
+.form {
+    // Поле ввода текста (input)
+    &-input {
+        position: relative;
+
+        &__label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--dark-gray);
+
+            &_sm {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 12px;
+                font-family: 'Ubuntu', sans-serif;
+                color: var(--dark-blue);
+                transition: .3s;
+            }
+        }
+
+        &__input {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-family: 'Fira Sans', sans-serif;
+            background-color: var(--white);
+            background-clip: padding-box;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--dark-blue);
+
+            &:focus {
+                border: 1px solid var(--blue);
+                outline: 0;
+            }
+        }
+    }
+
+    // Выпадающий список (select)
+    &-select {
+        position: relative;
+
+        &__label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--dark-blue);
+        }
+
+        &__wrap {
+            position: relative;
+        }
+
+        &__btn {
+            position: relative;
+            display: block;
+            width: 100%;
+            background: var(--ligth-white);
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            padding: 7px 40px 7px 15px;
+            font-size: 14px;
+            color: var(--light-gray);
+            cursor: pointer;
+
+            &-guess {
+                content: "";
+                position: absolute;
+                height: 16px;
+                width: 16px;
+                top: 50%;
+                right: 40px;
+                transform: translateY(-50%);
+                background-image: url("/src/images/forms/guess.svg");
+                z-index: 1;
+
+                &:hover ~ .form-select__btn-text {
+                    opacity: 100;
+                    z-index: 2;
+                }
+            }
+
+            &-text {
+                color: var(--dark-gray);
+                font-size: 12px;
+                position: absolute;
+                top: -93px;
+                right: 0;
+                padding: 8px 20px;
+                text-align: center;
+                background-color: var(--white);
+                border-radius: 8px;
+                cursor: default;
+                opacity: 0;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+                z-index: -1;
+
+                &-icon {
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: -24px;
+                        right: 16px;
+                        background: url("/src/images/forms/down-arrow.svg") no-repeat center center;
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            &:focus,
+            &_active {
+                border: 1px solid var(--blue);
+                outline: 0;
+            }
+
+            &_current {
+                color: var(--dark-blue);
+                outline: 0;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 17px;
+                display: block;
+                width: 8px;
+                height: 8px;
+                background-image: url("/src/images/forms/arrow.svg");
+                pointer-events: none;
+            }
+        }
+
+        &__list {
+            display: none;
+            scrollbar-color: var(--gray) var(--white);
+            scrollbar-width: thin;
+            position: absolute;
+            left: 0;
+            top: 70px;
+            margin: 0;
+            max-height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+            list-style-type: none;
+            background: var(--white);
+            box-shadow: 5px 13px 19px var(--shadow);
+            border-radius: 4px;
+            width: 100%;
+            z-index: 2;
+
+            &::-webkit-scrollbar {
+                width: 25px;
+            }
+
+            &::-webkit-clear-button {
+                display: none;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: var(--white);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--dark-gray);
+                border-radius: 50px;
+                border: 10px solid rgba(0, 0, 0, 0);
+                background-clip: padding-box;
+            }
+
+            &_visible {
+                display: block;
+            }
+
+            &-item {
+                margin: 0;
+                border-bottom: 0;
+                padding: 8px 20px;
+                cursor: pointer;
+                height: 40px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                color: var(--dark-gray);
+
+                &:hover {
+                    background: var(--ligth-white)
+                }
+
+                &:focus, &:active {
+                    background: var(--very-light-blue)
+                }
+            }
+        }
+
+        &__input-hidden {
+            display: none;
+        }
+    }
+
+    // Checkbox button (флажок)
+    &-checkbox {
+
+        &__title {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 12px;
+            font-family: 'Fira Sans', sans-serif;
+            color: var(--dark-blue);
+        }
+
+        &__input, &__input_v2 {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+
+            + label {
+                display: inline-flex;
+                align-items: center;
+                user-select: none;
+                padding-top: 4px;
+                cursor: pointer;
+                font-family: 'Ubuntu', sans-serif;
+                color: var(--dark-gray);
+                font-size: 14px;
+                line-height: 20px;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    flex-shrink: 0;
+                    flex-grow: 0;
+                    border: 1px solid var(--light-gray);
+                    border-radius: 2px;
+                    margin-right: 16px;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 60% 60%;
+                }
+            }
+
+            &:not(:disabled) {
+                &:not(:checked) + label:hover::before {
+                    border-color: var(--blue);
+                }
+
+                &:active + label::before {
+                    background-color: var(--light-blue);
+                    border-color: var(--blue);
+                }
+            }
+
+            &:disabled + label::before {
+                background-color: var(--gray);
+                border-color: var(--gray);
+            }
+
+            &:checked + label::before {
+                border-color: var(--blue);
+                background-color: var(--blue);
+                background-image: url("/src/images/forms/success.svg");
+            }
+
+            &:checked + label {
+                color: var(--dark-blue);
+            }
+        }
+
+        &__input {
+
+            + label {
+                font-weight: 400;
+            }
+        }
+
+        &__input_v2 {
+
+            + label {
+                font-weight: 700;
+            }
+        }
+    }
+
+    // Radio button (переключатель)
+    &-radio {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 4px;
+        background: var(--ligth-white);
+        overflow: hidden;
+
+        label {
+            cursor: pointer;
+            padding: 7px 0;
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--dark-gray);
+            font-weight: 500;
+
+            &:hover {
+                background: var(--light-blue);
+            }
+        }
+
+        input[type=radio] {
+            position: absolute;
+            visibility: hidden;
+            display: none;
+        }
+
+        input[type=radio]:checked + label {
+            border-radius: 4px;
+            background: var(--blue);
+            color: var(--white);
+        }
+    }
+
+    // Счетчик (input number)
+    &-counter {
+        position: relative;
+
+        .counter-btn {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            color: var(--dark-gray);
+            width: 24px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 38px;
+            position: absolute;
+            bottom: 0;
+            top: 0;
+
+            &:first-child {
+                left: 0;
+            }
+
+            &:last-child {
+                right: 0;
+            }
+
+            &:hover {
+                color: var(--blue);
+            }
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            text-align: center;
+        }
+    }
+
+    // Календарь
+    &-date {
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 40px;
+            top: 1px;
+            right: 1px;
+            bottom: 1px;
+            border-radius: 0 3px 3px 0;
+            background-color: var(--blue);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("/src/images/forms/calendar.svg");
+            cursor: pointer;
+        }
+
+        &__input {
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-family: 'Fira Sans', sans-serif;
+            background-color: var(--white);
+            background-clip: padding-box;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--dark-blue);
+
+            &:focus {
+                border: 1px solid var(--blue);
+                outline: 0;
+            }
+        }
+    }
+
+    // Большое поле для ввода текста (textarea)
+    &-textarea {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-family: 'Ubuntu', sans-serif;
+            color: var(--dark-gray);
+
+            &_sm {
+                display: block;
+                margin-bottom: 5px;
+                font-size: 12px;
+                font-family: 'Ubuntu', sans-serif;
+                color: var(--dark-blue);
+                transition: .3s;
+            }
+
+        }
+
+        &__input {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-family: 'Fira Sans', sans-serif;
+            background-color: var(--white);
+            background-clip: padding-box;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            resize: none;
+
+            &:focus {
+                border: 1px solid var(--blue);
+                outline: 0;
+            }
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 15px;
+    }
+
+    &-col {
+        padding: 0 15px;
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &_sm {
+            font-size: 10px;
+            line-height: 1.4;
+            color: var(--dark-gray);
+        }
+    }
+
+    &-counter-text {
+        display: flex;
+        align-items: center;
+        height: 38px;
+        color: var(--dark-gray);
+        font-size: 12px;
+        line-height: 1.2;
+    }
+
+    &-title {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-family: 'Ubuntu', sans-serif;
+        color: var(--dark-blue);
+    }
+}
+
+.datepicker {
+    display: none;
+    position: absolute;
+    color: var(--dark-gray);
+    background: var(--white);
+    box-shadow: 0 13px 19px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    z-index: 10;
+    padding: 15px;
+    font-size: 13px;
+    min-width: 300px;
+
+    &.active {
+        display: block;
+    }
+
+    &-header {
+        margin-bottom: 10px;
+    }
+
+    &-controls {
+        position: relative;
+
+        button {
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .view-switch {
+            font-size: 16px;
+            color: var(--dark-gray);
+            margin-left: 10px;
+        }
+
+        .next-btn {
+            position: absolute;
+            padding: 5px 10px;
+            right: 0;
+        }
+
+        .prev-btn {
+            position: absolute;
+            padding: 5px 10px;
+            right: 20px;
+        }
+    }
+
+    .days-of-week {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5%;
+        color: var(--default-gray);
+
+        span {
+            flex: 1 0 13%;
+
+            &:nth-child(6),
+            &:nth-child(7) {
+                color: var(--orange);
+            }
+        }
+    }
+
+    .datepicker-grid {
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5%;
+
+        &.months,
+        &.years,
+        &.decades {
+            gap: 0;
+
+            .month,
+            .year,
+            .decade {
+                flex: 1 0 25%;
+                cursor: pointer;
+                padding: 10px;
+            }
+        }
+
+        .day {
+            color: var(--dark-gray);
+            flex: 1 0 13%;
+            cursor: pointer;
+
+            &.prev,
+            &.next {
+                color: var(--default-gray);
+            }
+
+            &:hover {
+                color: var(--blue);
+            }
+
+            &:nth-child(6),
+            &:nth-child(13),
+            &:nth-child(20),
+            &:nth-child(27),
+            &:nth-child(34),
+            &:nth-child(41),
+            &:nth-child(7n) {
+                color: var(--orange);
+            }
+        }
+    }
+}
+
+.iti--allow-dropdown {
+    width: 100%;
+}

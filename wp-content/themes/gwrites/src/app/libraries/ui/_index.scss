@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+section {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1110px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container_sm {
+    max-width: 576px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.admin-bar .header__fixes {
+    top: 32px;
+
+    @media (max-width: 782px) {
+        top: 46px;
+    }
+
+    @media (max-width: 600px) {
+        top: 0;
+    }
+}
+
+.anchor {
+    position: relative;
+    top: -165px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 64px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 56px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+// Паддинги
+._pt_xl {
+    padding-top: 112px;
+}
+
+._pb_xl {
+    padding-bottom: 112px;
+}
+
+._pt_lg {
+    padding-top: 80px;
+}
+
+._pb_lg {
+    padding-bottom: 80px;
+}
+
+._pt_md {
+    padding-top: 64px;
+}
+
+._pb_md {
+    padding-bottom: 64px;
+}
+
+._pt_sm {
+    padding-top: 48px;
+}
+
+._pb_sm {
+    padding-bottom: 48px;
+}
+
+._pt_xs {
+    padding-top: 24px;
+}
+
+._pb_xs {
+    padding-bottom: 24px;
+}
+
+._pt_xxs {
+    padding-top: 10px;
+}
+
+._pb_xxs {
+    padding-bottom: 16px;
+}
+
+// Маржины
+._mb_xxs {
+    margin-bottom: 16px;
+}
+
+// Позиционирование текста
+._start {
+    text-align: start;
+}
+
+._center {
+    text-align: center;
+}
+
+._end {
+    text-align: end;
+}
+
+// Ширина элемента
+._w-100 {
+    width: 100%;
+}
+
+._w-50 {
+    width: 50%;
+}
+
+// Сетка
+._size_6 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+._size_5 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+}
+
+._size_4 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+}
+
+._size_3 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+._size_2 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+._size_1 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+}
+
+._size_auto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 64px;
+}
+
+._size_50 {
+    gap: 20px;
+
+    & > div {
+        flex: 0 0 40%;
+    }
+}
+
+// Дисплеи
+._d-flex {
+    display: flex;
+}
+
+._d-block {
+    display: block;
+}
+
+._hidden {
+    display: none;
+}
+
+._space-between {
+    justify-content: space-between;
+}
+
+// Цвета заливки
+._white {
+    background-color: var(--white);
+}
+
+._light-white {
+    background-color: var(--ligth-white);
+}
+
+._light-gray {
+    background-color: var(--light-gray);
+}
+
+._light-blue {
+    background-color: var(--light-blue);
+}
+
+._very-light-blue {
+    background-color: var(--very-light-blue);
+}
+
+._dark-blue {
+    background-color: var(--dark-blue);
+}
+
+._green {
+    background-color: var(--green);
+}
+
+._cyan {
+    background-color: var(--cyan);
+}
+
+// Кнопки
+
+.btn {
+    display: block;
+    border-radius: 4px;
+    font-weight: 500;
+    color: var(--white);
+    transition: 0.2s;
+    text-transform: uppercase;
+    padding: 10px;
+    border: none;
+    font-family: "Ubuntu", sans-serif;
+    cursor: pointer;
+    min-width: 170px;
+    text-align: center;
+
+    &_w-100_sm {
+        @media (max-width: 575px) {
+            width: 100%;
+        }
+    }
+
+    &_orange {
+        background: var(--orange);
+        border: 1px solid var(--orange);
+
+        &:hover {
+            background: var(--red);
+            border: 1px solid var(--red);
+        }
+    }
+
+    &_red {
+        background: var(--red);
+        border: 1px solid var(--red);
+
+        &:hover {
+            background: var(--orange);
+            border: 1px solid var(--orange);
+        }
+    }
+
+    &_blue {
+        background: var(--blue);
+        border: 1px solid var(--blue);
+
+        &:hover {
+            background: var(--dark-blue);
+            border: 1px solid var(--dark-blue);
+        }
+    }
+
+    &_blue_off {
+        padding: 10px 15px;
+        text-transform: none;
+        background: transparent;
+        color: var(--blue);
+        border: 1px solid var(--blue);
+
+        &:hover {
+            color: var(--white);
+            background: var(--blue);
+        }
+    }
+}
+
+._bg_grey_gradient {
+    background: radial-gradient(74.37% 272.44% at 14.45% 14.81%, #48525E 0%, #273343 100%);
+}
+
+._text_up {
+    text-transform: uppercase;
+}
+
+._scroll-hidden {
+    overflow: hidden;
+}
+
+::selection,
+::-moz-selection {
+    background: rgba(0, 0, 0, 0);
+    color: var(--blue);
+}
+
+::placeholder {
+    color: var(--light-gray);
+    opacity: 1;
+}
+
+.js-bookmark {
+    cursor: pointer;
+}
+
+._error {
+    transition: .3s;
+    color: var(--red);
+}
+
+.grecaptcha-badge {
+    opacity: 0;
+}

@@ -1,0 +1,27 @@
+.top {
+    background-color: var(--gray);
+    color: var(--white);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    &__element {
+        &:last-child {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            &:after {
+                content: '';
+                display: block;
+                width: 16px;
+                height: 16px;
+                background: url('/src/images/top/star.svg');
+            }
+        }
+    }
+}

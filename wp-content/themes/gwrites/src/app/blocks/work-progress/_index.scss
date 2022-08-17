@@ -1,0 +1,297 @@
+.work-progress {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    gap: 24px;
+
+    &__item {
+        position: relative;
+        padding: 12px 72px 12px 24px;
+        box-shadow: 0 13px 19px var(--shadow);
+        border-radius: 8px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: center;
+        min-height: 90px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            border-radius: 8px;
+            background-color: var(--blue);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &-text {
+            font: 700 24px/30px 'Ubuntu', sans-serif;
+            color: var(--dark-blue);
+        }
+
+        &-link {
+            font-size: 16px;
+            border-bottom: 1px dashed var(--white);
+            line-height: 1.4;
+            width: 165px;
+            display: none;
+        }
+
+        &.image1,
+        &.image2,
+        &.image3,
+        &.image4,
+        &.image5,
+        &.image6,
+        &.image7,
+        &.image8,
+        &.image9,
+        &.image10,
+        &.image11,
+        &.image12,
+        &.image13,
+        &.image14,
+        &.image15,
+        &.image20,
+        &.image21,
+        &.image22,
+        &.image23,
+        &.image24,
+        &.image25 {
+            &:hover {
+                background-color: var(--blue);
+                background-image: none;
+                box-shadow: none;
+
+                .work-progress__item-text {
+                    color: var(--white);
+                    border-bottom: none;
+                }
+
+                .work-progress__item-link {
+                    display: block;
+                }
+            }
+        }
+
+        &.image1 {
+            background: url("/src/images/work-progress/img01.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img01.svg");
+            }
+        }
+
+        &.image2 {
+            background-image: url("/src/images/work-progress/img02.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img02.svg");
+            }
+        }
+
+        &.image3 {
+            background-image: url("/src/images/work-progress/img03.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img03.svg");
+            }
+        }
+
+        &.image4 {
+            background-image: url("/src/images/work-progress/img04.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img04.svg");
+            }
+        }
+
+        &.image5 {
+            background-image: url("/src/images/work-progress/img05.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img05.svg");
+            }
+        }
+
+        &.image6 {
+            background-image: url("/src/images/work-progress/img06.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img06.svg");
+            }
+        }
+
+        &.image7 {
+            background-image: url("/src/images/work-progress/img07.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img07.svg");
+            }
+        }
+
+        &.image8 {
+            background-image: url("/src/images/work-progress/img08.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img08.svg");
+            }
+        }
+
+        &.image9 {
+            background-image: url("/src/images/work-progress/img09.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img09.svg");
+            }
+        }
+
+        &.image10 {
+            background-image: url("/src/images/work-progress/img10.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img10.svg");
+            }
+        }
+
+        &.image11 {
+            background-image: url("/src/images/work-progress/img11.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img11.svg");
+            }
+        }
+
+        &.image12 {
+            background-image: url("/src/images/work-progress/img12.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img12.svg");
+            }
+        }
+
+        &.image13 {
+            background-image: url("/src/images/work-progress/img13.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img13.svg");
+            }
+        }
+
+        &.image14 {
+            background-image: url("/src/images/work-progress/img14.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img14.svg");
+            }
+        }
+
+        &.image15 {
+            background-image: url("/src/images/work-progress/img15.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/img15.svg");
+            }
+        }
+
+        &.image20 {
+            background-image: url("/src/images/work-progress/001.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/001.svg");
+            }
+        }
+
+        &.image21 {
+            background-image: url("/src/images/work-progress/002.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/002.svg");
+            }
+        }
+
+        &.image22 {
+            background-image: url("/src/images/work-progress/003.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/003.svg");
+            }
+        }
+
+        &.image23 {
+            background-image: url("/src/images/work-progress/004.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/004.svg");
+            }
+        }
+
+        &.image24 {
+            background-image: url("/src/images/work-progress/005.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/005.svg");
+            }
+        }
+
+        &.image25 {
+            background-image: url("/src/images/work-progress/006.png");
+
+            &:after {
+                background-image: url("/src/images/work-progress/004.svg");
+            }
+        }
+    }
+
+    &-main {
+        .work-progress__item {
+            flex: 1 1 calc(100% / 3 - (48px));
+            min-height: 108px;
+        }
+    }
+
+    &__wrap {
+        height: 140px;
+    }
+
+    &__arrows {
+        display: flex;
+        gap: 24px;
+    }
+
+    &__arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: var(--light-gray);
+        background-image: url("/src/images/icons/arrow-white.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: .3s;
+
+        &.swiper-button-disabled {
+            cursor: default;
+            opacity: .5;
+
+            &:hover {
+                background-color: var(--light-gray);
+            }
+        }
+
+        &:last-child {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            background-color: var(--blue);
+        }
+    }
+}

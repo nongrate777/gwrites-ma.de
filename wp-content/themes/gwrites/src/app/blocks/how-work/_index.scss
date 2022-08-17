@@ -1,0 +1,117 @@
+.how-work {
+    position: relative;
+    padding: 24px 15px;
+    overflow: hidden;
+    margin: 0 -15px;
+
+    &__item {
+        padding: 24px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        box-shadow: 0 10px 14px rgba(0, 0, 0, .07);
+        color: var(--dark-blue);
+        overflow: hidden;
+        z-index: 2;
+        height: auto !important;
+
+        &:after {
+            position: absolute;
+            content: "";
+            background: var(--ligth-white);
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            bottom: -80px;
+            right: -80px;
+            z-index: 1;
+        }
+
+        &-title {
+            margin-bottom: 30px;
+            gap: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-number {
+            position: absolute;
+            color: var(--default-gray);
+            text-align: end;
+            z-index: 3;
+            bottom: 24px;
+            right: 24px;
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: 700;
+        }
+
+        &-text {
+            padding-bottom: 30px;
+            position: relative;
+            z-index: 2;
+
+            ul {
+                padding-left: 24px;
+            }
+        }
+    }
+
+    &__arrows {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        margin-top: -24px;
+    }
+
+    &__arrow {
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: var(--light-gray);
+        background-image: url("/src/images/icons/arrow-white.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: .3s;
+        z-index: 9;
+
+        &.swiper-button-disabled {
+            cursor: default;
+            opacity: .5;
+
+            &:hover {
+                background-color: var(--light-gray);
+            }
+        }
+
+        &:last-child {
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            background-color: var(--blue);
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: center;
+
+        .swiper-pagination-bullet {
+            transition: .3s;
+            width: 16px;
+            height: 16px;
+            background: var(--light-gray);
+            border-radius: 16px;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--blue);
+            width: 32px;
+        }
+    }
+}
